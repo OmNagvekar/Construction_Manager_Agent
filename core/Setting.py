@@ -25,6 +25,14 @@ class SystemSettings(BaseSettings):
         default=None,
         description="Base URL/endpoint for the API"
     )
+    db_url: Optional[str] = Field(
+        default=None,
+        description="Database connection string"
+    )
+    vendor_data_dir: Optional[str] = Field(
+        default="./data/mock_vendors.json",
+        description="Directory for vendor data"
+    )
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
