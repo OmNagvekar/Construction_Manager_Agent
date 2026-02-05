@@ -1,0 +1,78 @@
+{
+  "vendors": [
+    {
+      "vendor_id": "121",
+      "name": "BadRock Cements",
+      "materials": {
+        "cement": {
+          "unit": "bags",
+          "price_per_unit": 350,
+          "available_quantity": 1000,
+          "price_total_for_100": 35000,
+          "delivery_days": 2,
+          "quality_rating": 2.1
+        },
+        "sand": {
+          "unit": "tons",
+          "price_per_unit": 1200,
+          "available_quantity": 500,
+          "price_total_for_10": 12000,
+          "delivery_days": 1,
+          "quality_rating": 2.5
+        }
+      }
+    },
+    {
+      "vendor_id": "122",
+      "name": "GoodRock",
+      "materials": {
+        "cement": {
+          "unit": "bags",
+          "price_per_unit": 420,
+          "available_quantity": 800,
+          "price_total_for_100": 42000,
+          "delivery_days": 3,
+          "quality_rating": 4.5
+        },
+        "steel": {
+          "unit": "tons",
+          "price_per_unit": 52000,
+          "available_quantity": 100,
+          "price_total_for_1": 52000,
+          "delivery_days": 4,
+          "quality_rating": 4.6
+        }
+      }
+    },
+    {
+      "vendor_id": "123",
+      "name": "UltraBuild Supplies",
+      "materials": {
+        "cement": {
+          "unit": "bags",
+          "price_per_unit": 460,
+          "available_quantity": 500,
+          "price_total_for_100": 46000,
+          "delivery_days": 1,
+          "quality_rating": 4.8
+        },
+        "sand": {
+          "unit": "tons",
+          "price_per_unit": 1400,
+          "available_quantity": 300,
+          "price_total_for_10": 14000,
+          "delivery_days": 2,
+          "quality_rating": 4.7
+        },
+        "gravel": {
+          "unit": "tons",
+          "price_per_unit": 1600,
+          "available_quantity": 200,
+          "price_total_for_10": 16000,
+          "delivery_days": 2,
+          "quality_rating": 4.6
+        }
+      }
+    }
+  ]
+}
