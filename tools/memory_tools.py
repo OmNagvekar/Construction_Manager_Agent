@@ -5,8 +5,10 @@ from utils import db_manager
 
 def save_site_rules(site_name: str, rules_dict: dict):
     """
-    TURN 1: This tool extracts ANY dynamic rules and saves them as JSON.
-    Example rules_dict: {"limit": 40000, "banned_vendors": ["BadRock"]}
+    Persists site-specific constraints (e.g., limits, banned vendors) to the database.
+    Args:
+        site_name: The target construction site identifier.
+        rules_dict: Dictionary of rules to store as a JSON configuration.
     """
     with db_manager.get_connection() as conn: 
         # We store the whole dictionary as a string
@@ -17,8 +19,13 @@ def save_site_rules(site_name: str, rules_dict: dict):
 
 def check_approval_limit(site_name: str, amount: float, **kwargs) -> bool:
     """
-    TURN 2: Dynamic Logic. 
-    It pulls the JSON blob and checks for the 'limit' key.
+    Evaluates if an order amount exceeds the site's stored approval limit.
+    Args:
+        site_name: The target construction site identifier.
+        amount: The amount to be checked.
+        **kwargs: Additional keyword arguments (not used in this simple implementation).
+    Returns:
+        True if the amount exceeds the limit (requires human approval), False otherwise.
     """
     with db_manager.get_connection() as conn:
         row = conn.execute("SELECT rules FROM site_configs WHERE site=?", 
