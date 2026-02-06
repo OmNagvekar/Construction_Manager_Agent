@@ -5,7 +5,7 @@ from core import settings
 class DatabaseManager:
     def __init__(self, db_url):
         # Convert sqlite:///file.db to file.db
-        self.db_path = db_url.replace("sqlite:///", "")
+        self.db_path = db_url.replace("sqlite+aiosqlite:///", "")
         self._init_db()
 
     def _init_db(self):

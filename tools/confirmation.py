@@ -1,4 +1,4 @@
-from google.adk.agents import FunctionTool
+from google.adk.tools import FunctionTool
 
 def check_approval_limit(
     limit: float,
@@ -17,7 +17,7 @@ def check_approval_limit(
     """
     return amount >= limit
 
-def execute_order(site_name:str,material:str,quantity:int,amount:float,**kwargs) -> str:
+def execute_order(site_name:str,material:str,quantity:int,amount:float,limit: float,**kwargs) -> dict:
     """
     A placeholder tool to simulate order execution.
     Args:
@@ -25,6 +25,7 @@ def execute_order(site_name:str,material:str,quantity:int,amount:float,**kwargs)
         material: The material to be ordered.
         quantity: The quantity of the material to be ordered.
         amount: The total amount for the order.
+        limit: The approval limit to check against.
         **kwargs: Additional keyword arguments (not used in this simple implementation).
     
     Returns:

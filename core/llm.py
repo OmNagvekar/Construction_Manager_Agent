@@ -1,6 +1,6 @@
 from google.adk.models import LiteLlm
 from google.adk.models.google_llm import Gemini
-from Setting import settings
+from .Setting import settings
 from typing import Optional
 
 def get_model(

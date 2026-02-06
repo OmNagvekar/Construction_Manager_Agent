@@ -1,6 +1,6 @@
 import sqlite3
 import json
-from google.adk.agents import FunctionTool
+from google.adk.tools import FunctionTool
 from utils import db_manager
 
 def save_site_rules(site_name: str, rules_dict: dict):
@@ -33,7 +33,13 @@ def check_approval_limit(site_name: str, amount: float, **kwargs) -> bool:
 
     if row:
         rules = json.loads(row[0]) # Convert string back to Python Dict
-        limit = rules.get("limit", float('inf')) # Dynamic lookup
+        limit = None
+        for key,value in rules.items():
+            if "limit" in key.lower():
+                limit = value
+                break
+        if limit is None:
+            limit=0
         # Trigger PAUSE if amount (42,000) > limit (40,000)
         return amount > limit 
     return False
@@ -54,6 +60,6 @@ def execute_order(site_name:str,material:str,quantity:int,amount:float,**kwargs)
     return {"status": "success", "order": f"{quantity} {material} for {site_name} with amount {amount}"}
 
 amount_confirmation_tool = FunctionTool(
-    execute_order,
+    func=execute_order,
     require_confirmation=check_approval_limit,
 )

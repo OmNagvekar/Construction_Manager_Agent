@@ -10,4 +10,5 @@ dependencies = [
     "litellm>=1.81.8",
     "pydantic>=2.12.5",
     "ruff>=0.15.0",
+    "streamlit>=1.54.0",
 ]
