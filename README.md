@@ -1,8 +1,3 @@
-Here’s a **complete, clean, interview-ready `README.md`** tailored exactly to your repo, code, and CloudRedux expectations.
-You can **copy-paste this as-is**.
-
----
-
 # 🏗️ Construction Manager Procurement Agent
 
 An **Intelligent Procurement Agent** built using **Google Agent Development Kit (ADK)** and **Gemini / LiteLLM**, designed to manage construction material orders while enforcing **site-specific governance rules**, **persistent memory**, and **human-in-the-loop approvals**.
