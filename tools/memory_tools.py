@@ -1,4 +1,3 @@
-import sqlite3
 import json
 from google.adk.tools import FunctionTool
 from utils import db_manager

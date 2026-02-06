@@ -1,8 +1,8 @@
 import streamlit as st
 import asyncio
-from google.adk.runners import Runner # Use AppRunner for Apps
+from google.adk.runners import Runner
 from google.genai import types
-from agents import supervisor_agent, ConstructionSiteManagerApp
+from agents import ConstructionSiteManagerApp
 from utils import session_service
 
 # --- 1. SET UP THE PAGE ---
